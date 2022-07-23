@@ -5,6 +5,8 @@ describe("Login tests in Serverest Front", () => {
 
   it("login succeeded", async () => {
     await login.goto();
+    await login.login();
+    await login.validateTitle("Bem Vindo  ");
   });
 
 });
