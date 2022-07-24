@@ -11,7 +11,7 @@ export class LoginPage {
   constructor(page: Page) {
     this.page = page;
     this.email = page.locator('[data-testid="email"]');
-    this.password = page.locator('[data-testid="email"]');
+    this.password = page.locator('[data-testid="senha"]');
     this.btnEnter = page.locator('[data-testid="entrar"]');
   }
 
@@ -29,6 +29,9 @@ export class LoginPage {
   }
 
  async validateTitle (text:string){
+  //wait locator is visible to be defined
+  expect(await page.locator('[data-testid="logout"]').isVisible).toBeDefined()
+  //compare text parameter equals welcome title login succeded
   expect(await page.innerText("#root > div > div > h1")).toContain(text);
  }
 
