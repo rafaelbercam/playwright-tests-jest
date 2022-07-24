@@ -1,6 +1,5 @@
 import { Locator, Page } from "playwright";
 
-// playwright-dev-page.ts
 export class LoginPage {
   readonly page: Page;
   readonly email: Locator;
@@ -43,9 +42,9 @@ export class LoginPage {
   expect(await page.innerText("#root > div > div > h1")).toContain(text);
  }
 
-async validateMessageError(message:string){
-  expect(this.msgLoginError.isVisible).toBeDefined();
-  expect(await page.innerText('#root > div > div > form > div.alert.alert-secondary.alert-dismissible > span')).toContain(message);
-}
+  async validateMessageError(message:string){
+    expect(this.msgLoginError.isVisible).toBeDefined();
+    expect(await page.innerText('#root > div > div > form > div.alert.alert-secondary.alert-dismissible > span')).toContain(message);
+  }
 
 }
