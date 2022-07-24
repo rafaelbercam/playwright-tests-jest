@@ -11,7 +11,10 @@
   "author": "Rafael Bercam Medeiros",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "@types/faker": "^6.6.9",
     "@types/jest": "^28.1.6",
+    "faker": "^5.5.3",
     "jest": "^28.1.3",
     "jest-playwright-preset": "^2.0.0",
     "playwright": "^1.24.0",

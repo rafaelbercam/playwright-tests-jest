@@ -7,6 +7,7 @@ export class LoginPage {
   readonly btnEnter: Locator;
   readonly msgLoginError: Locator;
   readonly btnLogout: Locator;
+  readonly lnkSignUp: Locator;
   
 
   constructor(page: Page) {
@@ -16,6 +17,7 @@ export class LoginPage {
     this.btnEnter = page.locator('[data-testid="entrar"]');
     this.btnLogout = page.locator('[data-testid="logout"]');
     this.msgLoginError = page.locator('#root > div > div > form > div.alert.alert-secondary.alert-dismissible > span')
+    this.lnkSignUp = page.locator('[data-testid="cadastrar"]');
   }
 
   async goto() {
@@ -45,6 +47,11 @@ export class LoginPage {
   async validateMessageError(message:string){
     expect(this.msgLoginError.isVisible).toBeDefined();
     expect(await page.innerText('#root > div > div > form > div.alert.alert-secondary.alert-dismissible > span')).toContain(message);
+  }
+
+  async signUp() {
+    await this.lnkSignUp.click();
+    expect(page.locator('text=Cadastro').isVisible).toBeDefined();
   }
 
 }
