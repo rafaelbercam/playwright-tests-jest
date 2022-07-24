@@ -5,8 +5,14 @@ describe("Login tests in Serverest Front", () => {
 
   it("login succeeded", async () => {
     await login.goto();
-    await login.login();
+    await login.login("fulano@qa.com", "teste");
     await login.validateTitle("Bem Vindo Fulano da Silva");
+    await login.logout();
   });
+
+  it("Login Fail",async () => {
+    await login.login("fulano@qa.com", "anyPass");
+    await login.validateMessageError("Email e/ou senha inválidos")
+  })
 
 });
