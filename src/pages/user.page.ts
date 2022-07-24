@@ -25,9 +25,7 @@ export class UserPage {
     await this.email.type(email);
     await this.password.click();
     await this.password.type(password);
-    if(adm){
-        await this.checkAdm.check();
-    }
+    if(adm){ await this.checkAdm.check(); }
     await this.btnSubmit.click();
    }
 }
