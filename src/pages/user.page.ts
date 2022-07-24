@@ -28,6 +28,6 @@ export class UserPage {
     if(adm){
         await this.checkAdm.check();
     }
-    this.btnSubmit.click();
+    await this.btnSubmit.click();
    }
 }
