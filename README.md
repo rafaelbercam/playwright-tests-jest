@@ -40,3 +40,4 @@ O projeto esta dividido da seguinte maneira:
             [__tests__] -> Arquivos de testes usando Jest
             jest.config.js -> Configurações do Jest para execução de testes do PlayWright
             tsconfig.json -> Arquivo de configuração do TypeScript
+
