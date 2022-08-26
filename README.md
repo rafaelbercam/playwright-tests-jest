@@ -28,7 +28,7 @@ npm i
 ```
 npm test
 ````
-
+QA
 ## __Configuração do Projeto__
 ### Estrutura de Pastas
 O projeto esta dividido da seguinte maneira:

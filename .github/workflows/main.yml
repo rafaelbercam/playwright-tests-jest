@@ -1,0 +1,42 @@
+name: "automated tests serverestfront"
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+jobs:
+  test-linux:
+    name: API@${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Step 1 - Install operating system dependencies
+        run:  |
+          npm install -g allure-commandline --save-dev
+
+      - name: Step 3 - Run tests
+        run: npm run test
+
+      - name: Step 4 - Collect Allure files and generate allure-report folder
+        run:  allure generate ./build/allure-results -o allure-report/ --clean
+      - name: Step 5 - Publishing Allure artifact to GitHub Actions
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Step 6 - Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # default: gh-pages
+          publish_dir: allure-report

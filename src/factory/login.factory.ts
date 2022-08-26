@@ -1,18 +1,18 @@
 const loginFactory = {
 
     loginSuccess: {
-        "email": "fulano@qa.com",
-        "password": "teste"
+        "email": "rafaelbercam@qa.com",
+        "password": "1497f87adf5b352abd0360de96c041409a4ce521"
     },
 
     loginFail: {
-        "email" : "fulano@qa.com",
-        "password": "test"
+        "email" : "rafaelbercam@qa.com",
+        "password": "any"
     },
 
     loginEmailRequired: {
         "email" : "",
-        "password": "test"
+        "password": "any"
     }
 }
 
