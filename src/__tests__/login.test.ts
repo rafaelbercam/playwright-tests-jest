@@ -7,7 +7,7 @@ describe("Login tests in Serverest Front", () => {
   it("login succeeded", async () => {
     await login.goto();
     await login.login(loginFactory.loginSuccess.email, loginFactory.loginSuccess.password);
-    await login.validateTitle("Bem Vindo Fulano da Silva");
+    await login.validateTitle("Bem Vindo Rafael Bercam");
     await login.logout();
   });
 
