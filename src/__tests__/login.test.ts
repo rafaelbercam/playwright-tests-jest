@@ -1,19 +1,15 @@
-import loginFactory from "../factory/login.factory";
-import { LoginPage } from "../pages/login.page";
+import { AppPage } from "../pages/app.page";
+
 
 describe("Login tests in Serverest Front", () => {
-  const login =  new LoginPage(page);
+  const home =  new AppPage(page);
 
-  it("login succeeded", async () => {
-    await login.goto();
-    await login.login(loginFactory.loginSuccess.email, loginFactory.loginSuccess.password);
-    await login.validateTitle("Bem Vindo Rafael Bercam");
-    await login.logout();
+  it("home app", async () => {
+    await home.goto('O banco com bugs e falhas do seu jeito');
   });
 
-  it("Login Fail",async () => {
-    await login.login(loginFactory.loginFail.email, loginFactory.loginFail.password);
-    await login.validateMessageError("Email e/ou senha inválidos")
+  it('login success',async () => {
+    await home.login('rafael@email.com','Rafael');
   })
 
 });
