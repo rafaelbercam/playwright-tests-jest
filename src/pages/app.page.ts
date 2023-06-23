@@ -14,6 +14,7 @@ export class AppPage {
     this.password = page.locator('//*[@id="__next"]/div/div[2]/div/div[1]/form/div[2]/div/input');
     this.btnAcessar = page.locator('#__next > div > div.pages__FormBackground-sc-1ee1f2s-2.jNpkvU > div > div.card__login > form > div.login__buttons > button.style__ContainerButton-sc-1wsixal-0.otUnI.button__child');
     this.btnRegistrar = page.locator('[button="Registrar"]');
+    
   }
 
   async goto(title:String) {
